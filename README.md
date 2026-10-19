@@ -23,6 +23,19 @@
 
 ---
 
+## 👥 Equipo de trabajo
+
+| N° | Integrante | Usuario |
+|:--:|------------|:--:|
+| 1 | Huamani Diestra, Miriam Vanessa | MVanessaHD |
+| 2 | Meza Asto, Angel David | AngelMol0810 |
+| 3 | Chavez Cuzcano, Victor Javier | jchest771-stack |
+| 4 | Alva Aquino, Brian | blolchevere-ctrl |
+
+**Docente:** Vargas Paredes, Ana Cecilia
+
+---
+
 ## 📑 Contenido
 
 1. [Descripción del proyecto](#-descripción-del-proyecto)
@@ -73,19 +86,6 @@ flowchart LR
     U -- No --> OK[✅ Normal]
     SP & OK --> BJ[(Bandeja)]
 ```
-
----
-
-## 👥 Equipo de trabajo
-
-| N° | Integrante |
-|:--:|------------|
-| 1 | Huamani Diestra, Miriam Vanessa |
-| 2 | Meza Asto, Angel David |
-| 3 | Chavez Cuzcano, Victor Javier |
-| 4 | Alva Aquino, Brian |
-
-**Docente:** Vargas Paredes, Ana Cecilia
 
 ---
 
