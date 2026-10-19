@@ -371,17 +371,17 @@ Como complemento visual al menú de consola, se implementó la aplicación `dash
 
 **2. Gráfico estadístico: Distribución de correos spam vs normales**
 <div align="center">
-  <img src="images/dashboard_1.png" alt="Distribución de correos spam vs normales" width="850">
+  <img src="images/dashboard_2.png" alt="Distribución de correos spam vs normales" width="850">
 </div>
 
 **3. Gráfico estadístico: Puntaje de sospecha por correo:**
 <div align="center">
-  <img src="images/dashboard_1.png" alt="Puntaje por remitente" width="850">
+  <img src="images/dashboard_3.png" alt="Puntaje por remitente" width="850">
 </div>
 
 **4. Resultados de análisis, detallando puntaje, estado y motivo**
 <div align="center">
-  <img src="images/dashboard_umbral.png" alt="Bandeja de correos analizados" width="850">
+  <img src="images/dashboard_4.png" alt="Bandeja de correos analizados" width="850">
 </div>
 
 **Para ejecutar el dashboard en local:**
