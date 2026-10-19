@@ -1,3 +1,5 @@
+import os
+import sys
 import math
 import re
 import unicodedata
@@ -7,8 +9,15 @@ from dash import dcc, html, Input, Output, State, dash_table
 import plotly.express as px
 import pandas as pd
 
+# Se agrega la carpeta 'clases' a la ruta de búsqueda de Python
+# Así correo.py, reglas.py, detector.py y bandeja.py se encuentran entre sí sin errores
+RUTA_CLASES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "clases")
+if RUTA_CLASES not in sys.path:
+    sys.path.insert(0, RUTA_CLASES)
+
+
 # =========================================================================
-# 1. IMPORTACIÓN SEGURA (100% compatible con el Primer Archivo oficial)
+# 1. IMPORTACIÓN SEGURA
 # =========================================================================
 try:
     from correo import Correo
@@ -238,7 +247,7 @@ except ImportError:
 
 
 # =========================================================================
-# 2. INICIALIZACIÓN DE OBJETOS Y DATOS (Idénticos al Paso 1 y 2 del Primer Archivo)
+# 2. INICIALIZACIÓN DE OBJETOS Y DATOS
 # =========================================================================
 def ejemplos_de_entrenamiento():
     spam = [
@@ -269,7 +278,7 @@ bayes.entrenar(ejemplos_de_entrenamiento())
 
 bandeja = Bandeja()
 
-# Los 9 correos exactos del Primer Archivo
+
 correos_ejemplo = [
     Correo("ventas@promo-ya.com", "¡¡¡GANASTE UN PREMIO GRATIS!!!",
            "Haz clic: http://a.co http://b.co http://c.co"),
