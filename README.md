@@ -216,13 +216,23 @@ classDiagram
 
 ```text
 Detector-spam-correos/
+├── clases/                     # Módulos POO independientes (para el dashboard)
+│   ├── correo.py               # Clase Correo
+│   ├── reglas.py               # Clase abstracta Regla y sus 5 reglas hijas
+│   ├── detector.py             # Clase DetectorSpam (motor de análisis)
+│   └── bandeja.py              # Clase Bandeja (almacén y estadísticas)
 ├── images/
-│   └── logo_UNALM.png      # Logo de la portada de este README
-├── informe.ipynb           # Informe y código del proyecto (todas las clases)
-└── README.md               # Este archivo
+│   ├── logo_UNALM.png          # Logo institucional de la portada
+│   ├── dashboard_1.png         # Simulación de nuevo correo y ajuste de umbral
+│   ├── dashboard_2.png         # Distribución de correos spam vs normales
+│   ├── dashboard_3.png         # Puntaje de sospecha por correo
+│   └── dashboard_4.png         # Bandeja de correos analizados
+├── dashboard.py                # Aplicación web interactiva (Dash + Plotly)
+├── informe.ipynb               # Informe principal completo y autoejecutable
+└── README.md                   # Documentación general del repositorio
 ```
 
-> Todo el código vive dentro de `informe.ipynb`: **el orden de las celdas importa**, cada clase se define antes de usarse.
+> Todo el informe y su código están integrados en `informe.ipynb` (solo requiere la biblioteca estándar de Python). Adicionalmente, la carpeta `clases/` contiene los módulos `.py` que alimentan al dashboard interactivo `dashboard.py`.
 
 ---
 
@@ -349,6 +359,36 @@ Correo(...).puntaje = -1   →  ValueError: El puntaje no puede ser negativo
 Regla("x", 1)              →  TypeError: Can't instantiate abstract class Regla ...
 ```
 
+
+### 🖥️ Dashboard interactivo en Dash (Valor añadido)
+
+Como complemento visual al menú de consola, se implementó la aplicación `dashboard.py` con **Dash, Plotly y Pandas**, la cual importa las clases desde la carpeta `clases/` (`Correo`, `Regla`, `DetectorSpam` y `Bandeja`). Dado que Dash levanta un servidor web local (`http://127.0.0.1:8050/`), se incluyen las capturas de su despliegue en el navegador:
+
+**1. Simulación de ingreso de correo nuevo y calibración dinámica del umbral:**
+<div align="center">
+  <img src="images/dashboard_1.png" alt="Prueba interactiva del Dashboard" width="850">
+</div>
+
+**2. Gráfico estadístico: Distribución de correos spam vs normales**
+<div align="center">
+  <img src="images/dashboard_1.png" alt="Distribución de correos spam vs normales" width="850">
+</div>
+
+**3. Gráfico estadístico: Puntaje de sospecha por correo:**
+<div align="center">
+  <img src="images/dashboard_1.png" alt="Puntaje por remitente" width="850">
+</div>
+
+**4. Resultados de análisis, detallando puntaje, estado y motivo**
+<div align="center">
+  <img src="images/dashboard_umbral.png" alt="Bandeja de correos analizados" width="850">
+</div>
+
+**Para ejecutar el dashboard en local:**
+```bash
+pip install dash plotly pandas
+python dashboard.py
+```
 
 ---
 
