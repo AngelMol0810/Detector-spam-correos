@@ -3,7 +3,8 @@ clases/detectorspam.py
 Módulo con la definición de la clase DetectorSpam.
 """
 
-from clases.reglas import Regla, Correo
+from clases.correo import Correo
+from clases.reglas import Regla
 
 
 class DetectorSpam:
