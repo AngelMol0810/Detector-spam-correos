@@ -1,5 +1,5 @@
 """
-clases/detectorspam.py
+clases/detector.py
 Módulo con la definición de la clase DetectorSpam.
 """
 
