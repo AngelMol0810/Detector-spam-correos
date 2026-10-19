@@ -1,6 +1,3 @@
-import re
-
-
 class Correo:
     """Un correo con sus datos y el resultado del análisis de spam.
 
